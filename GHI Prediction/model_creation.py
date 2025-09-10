@@ -7,7 +7,7 @@ import matplotlib.pyplot as plt
 import numpy as np
 from sklearn.metrics import mean_squared_error, r2_score, mean_absolute_error
 
-def create_cnn_lstm_model(input_shape, num_features):
+def create_cnn_lstm_model(input_shape):
     model = Sequential([
         Input(shape=input_shape),
         
@@ -31,12 +31,12 @@ def create_cnn_lstm_model(input_shape, num_features):
         Dropout(0.3),
         
         # Output layer
-        Dense(num_features)
+        Dense(1)
     ])
     
     return model
 
-def create_cnn_gru_model(input_shape, num_features):
+def create_cnn_gru_model(input_shape):
     model = Sequential([
         Input(shape=input_shape),
         
@@ -60,7 +60,7 @@ def create_cnn_gru_model(input_shape, num_features):
         Dropout(0.3),
         
         # Output layer
-        Dense(num_features)
+        Dense(1)
     ])
     
     return model
